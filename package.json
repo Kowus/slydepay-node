@@ -1,0 +1,15 @@
+{
+  "name": "slyde",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Barnabas Nomo <barnabas@elite-education.org> (http://www.barnabasnomo.com)",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
