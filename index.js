@@ -3,6 +3,7 @@
  * Created By barnabasnomo on 2/16/18 at 6:01 PM
  * @soundtrack Flowers - Manny Keys
 */
+const invoice = require('./lib/invoicing');
 
 module.exports = Merchant;
 
@@ -11,4 +12,5 @@ function Merchant(merchant) {
     this.merchantKey = merchant.merchantKey;
 }
 
-Merchant.prototype.listPayOptions = require('./lib/list-pay-options');
+Merchant.prototype.listPayOptions = invoice.listPayOptions;
+Merchant.prototype.createInvoice = invoice.createInvoice;

@@ -1,7 +1,7 @@
 {
-  "name": "slyde",
+  "name": "slydepay-wrapper",
   "version": "1.0.0",
-  "description": "",
+  "description": "A slydepay api for node.js apps",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,7 @@
   "author": "Barnabas Nomo <barnabas@elite-education.org> (http://www.barnabasnomo.com)",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "request": "^2.83.0"
   }
 }
