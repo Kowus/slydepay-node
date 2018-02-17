@@ -19,3 +19,4 @@ Merchant.prototype.createInvoice = invoice.createInvoice;
 Merchant.prototype.sendInvoice = invoice.sendInvoice;
 Merchant.prototype.checkPaymentStatus = invoice.checkPaymentStatus;
 Merchant.prototype.confirmTransaction = transactions.confirmTransaction;
+Merchant.prototype.cancelTransaction = transactions.cancelTransaction;
