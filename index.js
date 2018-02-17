@@ -14,3 +14,4 @@ function Merchant(merchant) {
 
 Merchant.prototype.listPayOptions = invoice.listPayOptions;
 Merchant.prototype.createInvoice = invoice.createInvoice;
+Merchant.prototype.sendInvoice = invoice.sendInvoice;
