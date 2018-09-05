@@ -13,39 +13,29 @@ class Merchant {
     this.merchantKey = merchant.merchantKey;
   }
 
+  get getUser() {
+    return this;
+  }
   listPayOptions() {
-    const merchantKey = this.merchantKey,
-      emailOrMobileNumber = this.emailOrMobileNumber;
-    return new Promise((resolve, reject) => {
-      request(
-        {
-          method: 'POST',
-          json: {
-            emailOrMobileNumber: emailOrMobileNumber,
-            merchantKey: merchantKey
-          },
-          url: 'https://app.slydepay.com.gh/api/merchant/invoice/payoptions'
-        },
-        (err, response, body) => {
-          if (err) {
-            reject(err);
-            return;
-          }
-          if (!body.success || body.errorCode) {
-            reject({ code: body.errorCode, message: body.errorMessage });
-            return;
-          }
-          resolve(body);
-        }
-      );
-    });
+    return invoice.listPayOptions(this.getUser);
+  }
+  createInvoice(options) {
+    return invoice.createInvoice(this.getUser, options);
+  }
+  sendInvoice(options) {
+    return invoice.sendInvoice(this.getUser, options);
+  }
+  checkPaymentStatus(options) {
+    return invoice.checkPaymentStatus(this.getUser, options);
+  }
+  confirmTransaction(options) {
+    return transactions.confirmTransaction(this.getUser, options);
+  }
+  cancelTransaction(options) {
+    return transactions.cancelTransaction(this.getUser, options);
   }
 }
 
-// Merchant.prototype.listPayOptions = invoice.listPayOptions;
-Merchant.prototype.createInvoice = invoice.createInvoice;
-Merchant.prototype.sendInvoice = invoice.sendInvoice;
-Merchant.prototype.checkPaymentStatus = invoice.checkPaymentStatus;
 Merchant.prototype.confirmTransaction = transactions.confirmTransaction;
 Merchant.prototype.cancelTransaction = transactions.cancelTransaction;
 
